@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: #f1f1f1;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 2rem;
+        margin: 2rem;
+      }
+      .container {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        height: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+    <main>
+      <div class="container">
+            <div class="formclass">
+                <table>
+                  <thead>
+                    <tr>
+                      <th colspan="2">
+                        <h1>Kalkulator Suhu</h1>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label for="suhu">Suhu</label>
+                      </td>
+                      <td>
+                        <input type="number" id="suhu" />
+                        <select id="satuanawal">
+                          <option value="celcius">Celcius</option>
+                          <option value="reamur">Reamur</option>
+                          <option value="fahrenheit">Fahrenheit</option>
+                          <option value="kelvin">Kelvin</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label for="satuanakhir">Satuan</label>
+                      </td>
+                      <td>
+                        <select id="satuanakhir">
+                          <option value="celcius">Celcius</option>
+                          <option value="reamur">Reamur</option>
+                          <option value="fahrenheit">Fahrenheit</option>
+                          <option value="kelvin">Kelvin</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label for="hasil">Hasil</label>
+                      </td>
+                      <td>
+                        <input type="text" id="hasil" disabled />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <button id="konversi">Konversi</button>
+                        <button id="restart">Restart</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <script>
+                  var restart = document.getElementById("restart");
+                  restart.addEventListener("click", function () {
+                          location.reload();
+                  });
+                  const konversi = document.getElementById("konversi");
+                  konversi.addEventListener("click", function () {
+                    const suhu = document.getElementById("suhu").value;
+                    const satuanawal = document.getElementById("satuanawal").value;
+                    const satuanakhir = document.getElementById("satuanakhir").value;
+                    let hasil;
+                    if (satuanawal == "celcius") {
+                      if (satuanakhir == "celcius") {
+                        hasil = suhu;
+                      } else if (satuanakhir == "reamur") {
+                        hasil = (4 / 5) * suhu;
+                      } else if (satuanakhir == "fahrenheit") {
+                        hasil = (9 / 5) * suhu + 32;
+                      } else if (satuanakhir == "kelvin") {
+                        hasil = parseInt(suhu) + 273;
+                      }
+                    } else if (satuanawal == "reamur") {
+                      if (satuanakhir == "celcius") {
+                        hasil = (5 / 4) * suhu;
+                      } else if (satuanakhir == "reamur") {
+                        hasil = suhu;
+                      } else if (satuanakhir == "fahrenheit") {
+                        hasil = (9 / 4) * suhu + 32;
+                      } else if (satuanakhir == "kelvin") {
+                        hasil = (5 / 4) * suhu + 273;
+                      }
+                    } else if (satuanawal == "fahrenheit") {
+                      if (satuanakhir == "celcius") {
+                        hasil = (5 / 9) * (suhu - 32);
+                      } else if (satuanakhir == "reamur") {
+                        hasil = (4 / 9) * (suhu - 32);
+                      } else if (satuanakhir == "fahrenheit") {
+                        hasil = suhu;
+                      } else if (satuanakhir == "kelvin") {
+                        hasil = (5 / 9) * (suhu - 32) + 273;
+                      }
+                    } else if (satuanawal == "kelvin") {
+                      if (satuanakhir == "celcius") {
+                        hasil = suhu - 273;
+                      } else if (satuanakhir == "reamur") {
+                        hasil = (4 / 5) * (suhu - 273);
+                      } else if (satuanakhir == "fahrenheit") {
+                        hasil = (9 / 5) * (suhu - 273) + 32;
+                      } else if (satuanakhir == "kelvin") {
+                        hasil = suhu;
+                      }
+                    }
+                    document.getElementById("hasil").value = hasil;
+                    console.log(hasil);
+                  });
+                </script>
+            </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

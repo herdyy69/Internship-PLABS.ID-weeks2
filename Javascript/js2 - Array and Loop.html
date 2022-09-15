@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // buat array
+      var namaSiswa = ["Andi", "Budi", "Caca", "Deni", "Euis"];
+      var jumlahSiswa = namaSiswa.length;
+      // For Loop
+      for (var i = 0; i < jumlahSiswa; i++) {
+        console.log("Nama Siswa ke-" + (i + 1) + " adalah " + namaSiswa[i]);
+      }
+      // Foreach
+      namaSiswa.forEach(function (item, index, array) {
+        console.log(item, index);
+      });
+      // While Loop
+      var i = 0;
+      while (i < jumlahSiswa) {
+        console.log("Nama Siswa ke-" + (i + 1) + " adalah " + namaSiswa[i]);
+        i++;
+      }
+      // Do While Loop
+      var i = 0;
+      do {
+        console.log("Nama Siswa ke-" + (i + 1) + " adalah " + namaSiswa[i]);
+        i++;
+      } while (i < jumlahSiswa);
+    </script>
+  </body>
+</html>

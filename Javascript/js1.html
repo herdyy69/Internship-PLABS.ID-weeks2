@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS 1</title>
+  </head>
+  <body>
+    <p id="hallo"></p>
+    <p id="tgl">dadw</p>
+    <script>
+      var hallo = document.getElementById("hallo");
+      var tgl = document.getElementById("tgl");
+      var date = new Date();
+      var hour = date.getHours();
+      var minute = date.getMinutes();
+      var second = date.getSeconds();
+      var time = hour + ":" + minute + ":" + second;
+      var nama = "Herdy";
+      hallo.innerHTML = "HALLO WORD " + "Dan Nama saya adalah " + nama;
+      tgl.innerHTML = "Sekarang Tanggal " + date;
+      if (nama == "Herdy") {
+        alert("Nama Saya adalah Herdy");
+      } else {
+        alert("Nama Saya Bukan Herdy");
+      }
+    </script>
+  </body>
+</html>

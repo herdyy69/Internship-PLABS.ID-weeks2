@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input{
+        padding: 10px;
+        /* ubah style */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button{
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      p{
+        padding: 10px;
+      }
+    </style>
+  <body>
+    <input type="date" id="input" placeholder="" />
+    <button id="button">PROCESS</button>
+    <button id="restart">RESTART</button>
+    <p id="umurku"></p>
+    <!-- <p id="demos">GOOD MORNING</p>
+    <button type="button" onclick="myFunction()">Tambah</button>
+    <button type="button" onclick="myFunction2()">Kurang</button> -->
+
+    <script>
+      var input = document.getElementById("input");
+      var button = document.getElementById("button");
+      var restart = document.getElementById("restart");
+      restart.addEventListener("click", function () {
+        location.reload();
+      });
+      button.addEventListener("click", function () {
+        var date = new Date(input.value);
+        var today = new Date();
+        var umur = today.getFullYear() - date.getFullYear();
+        var m = today.getMonth() - date.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < date.getDate())) {
+          umur--;
+        }
+        document.getElementById("umurku").innerHTML =
+          "Umur saya sekarang adalah " + umur + " tahun";
+      });
+
+      //   let counter = 0;
+      //   function myFunction() {
+      //     counter++;
+      //     var x = (document.getElementById("demos").innerHTML = counter);
+      //     console.log(x);
+
+      //     if (x == "10") {
+      //       document.getElementById("demos").style.color = "red";
+      //       console.log("Bilangan ke 10");
+      //     } else {
+      //       document.getElementById("demos").style.color = "black";
+      //     }
+      //   }
+
+      //   function myFunction2() {
+      //     counter--;
+      //     var x = (document.getElementById("demos").innerHTML = counter);
+      //     console.log(x);
+
+      //     if (x == "-10") {
+      //       document.getElementById("demos").style.color = "red";
+      //       console.log("Bilangan ke -10");
+      //     } else {
+      //       document.getElementById("demos").style.color = "black";
+      //     }
+      //   }
+    </script>
+  </body>
+</html>

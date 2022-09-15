@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var src = "http://localhost:3000/jurusanAssalaam/";
+      fetch(src)
+        .then((res) => res.json())
+        .then((data) => {
+          document.getElementById("demo").innerHTML = data.map((datas) => {
+            return `<option value="${datas.jurusan}">${datas.jurusan}</option>`;
+            var tes = datas.id;
+          });
+          submit.addEventListener("click", function (tes) {
+            const demo = document.getElementById("demo").value;
+              document.getElementById("hasil").innerHTML = demo ;
+              console.log(demo);
+          });
+        });
+    </script>
+    <select name="jurusan" id="demo"></select>
+    <button id="submit">PROSES</button>
+    <p id="hasil"></p>
+</html>

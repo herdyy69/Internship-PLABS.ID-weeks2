@@ -1,0 +1,34 @@
+{
+  "kelasAssalaam": [
+    {
+      "id": 1,
+      "kelas": "X"
+    },
+    {
+      "id": 2,
+      "kelas": "XI"
+    },
+    {
+      "id": 3,
+      "kelas": "XII"
+    }
+  ],
+  "jurusanAssalaam": [
+    {
+      "id": 1,
+      "jurusan": "Rekayasa Perangkat Lunak"
+    },
+    {
+      "id": 2,
+      "jurusan": "Teknik Kendaraan Ringan"
+    },
+    {
+      "id": 3,
+      "jurusan": "Teknik Bisnis Sepeda Motor"
+    },
+    {
+      "id": 4,
+      "jurusan": "Teknik Jaringan Komputer"
+    }
+  ]
+}
